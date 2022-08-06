@@ -1,21 +1,21 @@
-#$ TITLE: BOB57
+#$ TITLE: Nazgul F5 HD
 #$ FIRMWARE_VERSION: 4.3
 #$ CATEGORY: BNF
 #$ STATUS: EXPERIMENTAL
-#$ KEYWORDS: xing, iflight, bob, bob57
+#$ KEYWORDS: xing, iflight, nazgul, f5
 #$ AUTHOR: Patrick XING (iFlight)
 
 #$ PARSER: MARKED
 
 #$ DESCRIPTION: <a href="https://shop.iflight-rc.com/"><img src="https://user-images.githubusercontent.com/31681897/180714478-44bcd30e-8c78-4c6d-b295-8dbeb0d263f4.png" width="150px" style="display: block; float: right;"/></a>
 #$ DESCRIPTION:
-#$ DESCRIPTION: This is the official iFlight factory tune (4.3 XINGtune) for the BOB57!
+#$ DESCRIPTION: This is the official iFlight factory tune (4.3 XINGtune) for the Nazgul F5 HD!
 #$ DESCRIPTION: Please read instructions carefully! All factory default options have been selected automatically!
-#$ DESCRIPTION: Version: 2022.07.14-V1.3
+#$ DESCRIPTION: Version: 2022.07.22-V2.0 (BMI270)
 #$ DESCRIPTION:
 #$ DESCRIPTION: Recommended BLHeli32 Settings:
 #$ DESCRIPTION:-------------
-#$ DESCRIPTION: <a href="https://user-images.githubusercontent.com/31681897/183231567-13988665-e29d-48bd-97b8-a3e8b3830e65.jpg"><img src="https://user-images.githubusercontent.com/31681897/183231567-13988665-e29d-48bd-97b8-a3e8b3830e65.jpg" width="250px" style="display: block; float: right;"/></a>
+#$ DESCRIPTION: <a href="https://user-images.githubusercontent.com/31681897/183231921-b4f3f315-a259-4e1c-a315-b9ed5dc0c11b.png"><img src="https://user-images.githubusercontent.com/31681897/183231921-b4f3f315-a259-4e1c-a315-b9ed5dc0c11b.png" width="250px" style="display: block; float: right;"/></a>
 #$ DESCRIPTION:
 #$ DESCRIPTION:
 #$ WARNING: You've read the information attached to these factory defaults and take full responsibility for your own gear! Do a test flight in confined area after updating!
@@ -29,7 +29,7 @@ defaults nosave
 board_name IFLIGHT_BLITZ_F722
 manufacturer_id IFRC
 
-# name: BOB57
+# name: Nazgul F5
 
 # resources
 resource BEEPER 1 C13
@@ -169,14 +169,6 @@ timer A03 AF2
 # pin A03: TIM5 CH4 (AF2)
 timer A08 AF1
 # pin A08: TIM1 CH1 (AF1)
-timer A00 AF2
-# pin A00: TIM5 CH1 (AF2)
-timer C06 AF3
-# pin C06: TIM8 CH1 (AF3)
-timer C07 AF3
-# pin C07: TIM8 CH2 (AF3)
-timer A01 AF1
-# pin A01: TIM2 CH2 (AF1)
 
 # dma
 dma SPI_MOSI 1 NONE
@@ -235,14 +227,6 @@ dma pin A03 1
 # pin A03: DMA1 Stream 3 Channel 6
 dma pin A08 0
 # pin A08: DMA2 Stream 6 Channel 0
-dma pin A00 0
-# pin A00: DMA1 Stream 2 Channel 6
-dma pin C06 0
-# pin C06: DMA2 Stream 2 Channel 0
-dma pin C07 1
-# pin C07: DMA2 Stream 3 Channel 7
-dma pin A01 0
-# pin A01: DMA1 Stream 6 Channel 3
 
 # feature
 feature -RX_PPM
@@ -282,7 +266,7 @@ serial 1 64 115200 57600 0 115200
 serial 2 0 115200 57600 0 115200
 serial 3 2 115200 115200 0 115200
 serial 4 0 115200 57600 0 115200
-serial 5 0 115200 57600 0 115200
+serial 5 1024 115200 57600 0 115200
 
 # mixer
 mixer QUADX
@@ -338,11 +322,11 @@ beacon RX_SET
 map AETR1234
 
 # led
-led 0 0,0::L:0
-led 1 0,0::C:0
-led 2 0,0::C:0
-led 3 0,0::C:0
-led 4 0,0::C:0
+led 0 0,0::L:5
+led 1 1,0::C:5
+led 2 2,0::C:5
+led 3 3,0::C:5
+led 4 4,0::C:5
 led 5 0,0::C:0
 led 6 0,0::C:0
 led 7 0,0::C:0
@@ -377,8 +361,8 @@ color 1 0,255,255
 color 2 0,0,255
 color 3 30,0,255
 color 4 60,0,255
-color 5 90,0,255
-color 6 120,0,255
+color 5 91,0,255
+color 6 108,0,255
 color 7 150,0,255
 color 8 180,0,255
 color 9 210,0,255
@@ -541,7 +525,7 @@ rxfail 17 h
 # master
 set gyro_hardware_lpf = NORMAL
 set gyro_lpf1_type = PT1
-set gyro_lpf1_static_hz = 0
+set gyro_lpf1_static_hz = 250
 set gyro_lpf2_type = PT1
 set gyro_lpf2_static_hz = 0
 set gyro_notch1_hz = 0
@@ -555,19 +539,19 @@ set gyro_overflow_detect = ALL
 set yaw_spin_recovery = AUTO
 set yaw_spin_threshold = 1950
 set gyro_to_use = FIRST
-set dyn_notch_count = 2
-set dyn_notch_q = 300
-set dyn_notch_min_hz = 90
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set dyn_notch_min_hz = 130
 set dyn_notch_max_hz = 600
-set gyro_lpf1_dyn_min_hz = 150
-set gyro_lpf1_dyn_max_hz = 300
+set gyro_lpf1_dyn_min_hz = 250
+set gyro_lpf1_dyn_max_hz = 500
 set gyro_lpf1_dyn_expo = 5
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -11,-18,6,1
+set acc_calibration = -25,-26,21,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -596,11 +580,11 @@ set rssi_offset = 0
 set rssi_invert = OFF
 set rssi_src_frame_lpf_period = 30
 set rc_smoothing = ON
-set rc_smoothing_auto_factor = 35
-set rc_smoothing_auto_factor_throttle = 28
-set rc_smoothing_setpoint_cutoff = 12
-set rc_smoothing_feedforward_cutoff = 12
-set rc_smoothing_throttle_cutoff = 20
+set rc_smoothing_auto_factor = 20
+set rc_smoothing_auto_factor_throttle = 30
+set rc_smoothing_setpoint_cutoff = 25
+set rc_smoothing_feedforward_cutoff = 25
+set rc_smoothing_throttle_cutoff = 0
 set rc_smoothing_debug_axis = ROLL
 set fpv_mix_degrees = 0
 set max_aux_channels = 14
@@ -654,7 +638,7 @@ set motor_pwm_protocol = DSHOT600
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
 set motor_poles = 14
-set motor_output_reordering = 3,2,1,0,4,5,6,7
+set motor_output_reordering = 0,1,2,3,4,5,6,7
 set thr_corr_value = 0
 set thr_corr_angle = 800
 set failsafe_delay = 15
@@ -673,7 +657,7 @@ set bat_capacity = 0
 set vbat_max_cell_voltage = 440
 set vbat_full_cell_voltage = 410
 set vbat_min_cell_voltage = 330
-set vbat_warning_cell_voltage = 340
+set vbat_warning_cell_voltage = 350
 set vbat_hysteresis = 1
 set current_meter = ADC
 set battery_meter = ADC
@@ -746,25 +730,25 @@ set gps_rescue_velocity_i = 20
 set gps_rescue_velocity_d = 15
 set gps_rescue_yaw_p = 40
 set gps_rescue_throttle_min = 1100
-set gps_rescue_throttle_max = 1700
+set gps_rescue_throttle_max = 1600
 set gps_rescue_ascend_rate = 500
 set gps_rescue_descend_rate = 150
 set gps_rescue_throttle_hover = 1280
-set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
-set gps_rescue_min_sats = 5
+set gps_rescue_sanity_checks = RESCUE_SANITY_ON
+set gps_rescue_min_sats = 8
 set gps_rescue_min_dth = 100
 set gps_rescue_allow_arming_without_fix = OFF
 set gps_rescue_alt_mode = MAX_ALT
 set gps_rescue_use_mag = ON
 set deadband = 0
-set yaw_deadband = 5
+set yaw_deadband = 0
 set yaw_control_reversed = OFF
 set pid_process_denom = 1
 set runaway_takeoff_prevention = ON
 set runaway_takeoff_deactivate_delay = 500
 set runaway_takeoff_deactivate_throttle_percent = 20
 set simplified_gyro_filter = ON
-set simplified_gyro_filter_multiplier = 60
+set simplified_gyro_filter_multiplier = 100
 set tlm_inverted = OFF
 set tlm_halfduplex = ON
 set frsky_default_lat = 0
@@ -822,16 +806,16 @@ set osd_warn_batt_critical = ON
 set osd_warn_visual_beeper = ON
 set osd_warn_crash_flip = ON
 set osd_warn_esc_fail = ON
-set osd_warn_core_temp = ON
+set osd_warn_core_temp = OFF
 set osd_warn_rc_smoothing = ON
 set osd_warn_fail_safe = ON
 set osd_warn_launch_control = ON
 set osd_warn_no_gps_rescue = ON
 set osd_warn_gps_rescue_disabled = ON
-set osd_warn_rssi = OFF
+set osd_warn_rssi = ON
 set osd_warn_link_quality = OFF
 set osd_warn_rssi_dbm = OFF
-set osd_warn_over_cap = OFF
+set osd_warn_over_cap = ON
 set osd_rssi_alarm = 20
 set osd_link_quality_alarm = 80
 set osd_rssi_dbm_alarm = -60
@@ -849,48 +833,48 @@ set osd_logo_on_arming = OFF
 set osd_logo_on_arming_duration = 5
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 455
-set osd_rssi_pos = 14680
-set osd_link_quality_pos = 481
+set osd_vbat_pos = 234
+set osd_rssi_pos = 2459
+set osd_link_quality_pos = 311
 set osd_link_tx_power_pos = 234
-set osd_rssi_dbm_pos = 345
-set osd_tim_1_pos = 295
-set osd_tim_2_pos = 322
+set osd_rssi_dbm_pos = 299
+set osd_tim_1_pos = 234
+set osd_tim_2_pos = 405
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 6573
+set osd_flymode_pos = 2478
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 441
-set osd_vtx_channel_pos = 355
+set osd_throttle_pos = 245
+set osd_vtx_channel_pos = 373
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 2400
-set osd_mah_drawn_pos = 2432
+set osd_current_pos = 2401
+set osd_mah_drawn_pos = 2433
 set osd_motor_diag_pos = 234
-set osd_craft_name_pos = 14799
-set osd_display_name_pos = 490
-set osd_gps_speed_pos = 2455
-set osd_gps_lon_pos = 256
-set osd_gps_lat_pos = 288
-set osd_gps_sats_pos = 2423
-set osd_home_dir_pos = 2540
-set osd_home_dist_pos = 2542
-set osd_flight_dist_pos = 213
+set osd_craft_name_pos = 2542
+set osd_display_name_pos = 234
+set osd_gps_speed_pos = 313
+set osd_gps_lon_pos = 234
+set osd_gps_lat_pos = 234
+set osd_gps_sats_pos = 2426
+set osd_home_dir_pos = 2511
+set osd_home_dist_pos = 2512
+set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 234
-set osd_altitude_pos = 2485
+set osd_altitude_pos = 2391
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
-set osd_power_pos = 234
-set osd_pidrate_profile_pos = 407
-set osd_warnings_pos = 12683
-set osd_avg_cell_voltage_pos = 14656
+set osd_power_pos = 388
+set osd_pidrate_profile_pos = 234
+set osd_warnings_pos = 14732
+set osd_avg_cell_voltage_pos = 2369
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
-set osd_disarmed_pos = 14752
+set osd_disarmed_pos = 2336
 set osd_nheading_pos = 234
 set osd_up_down_reference_pos = 205
 set osd_nvario_pos = 234
@@ -1034,8 +1018,8 @@ set scheduler_relax_osd = 25
 set timezone_offset_minutes = 0
 set rpm_filter_harmonics = 2
 set rpm_filter_q = 500
-set rpm_filter_min_hz = 80
-set rpm_filter_fade_range_hz = 50
+set rpm_filter_min_hz = 100
+set rpm_filter_fade_range_hz = 80
 set rpm_filter_lpf_hz = 150
 set flysky_spi_tx_id = 0
 set flysky_spi_rf_channels = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1043,7 +1027,7 @@ set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = BOB57
+set name = Nazgul F5
 set display_name = -
 set position_alt_source = DEFAULT
 set position_alt_gps_min_sats = 10
@@ -1057,20 +1041,20 @@ profile 0
 
 # profile 0
 set profile_name = -
-set dterm_lpf1_dyn_min_hz = 82
-set dterm_lpf1_dyn_max_hz = 165
+set dterm_lpf1_dyn_min_hz = 52
+set dterm_lpf1_dyn_max_hz = 105
 set dterm_lpf1_dyn_expo = 5
 set dterm_lpf1_type = PT1
-set dterm_lpf1_static_hz = 82
+set dterm_lpf1_static_hz = 52
 set dterm_lpf2_type = PT1
-set dterm_lpf2_static_hz = 165
+set dterm_lpf2_static_hz = 0
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 0
 set vbat_sag_compensation = 0
 set pid_at_min_throttle = ON
 set anti_gravity_mode = SMOOTH
 set anti_gravity_threshold = 250
-set anti_gravity_gain = 4000
+set anti_gravity_gain = 3500
 set acc_limit_yaw = 0
 set acc_limit = 0
 set crash_dthreshold = 50
@@ -1085,7 +1069,7 @@ set crash_recovery = OFF
 set iterm_rotation = OFF
 set iterm_relax = RP
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 8
+set iterm_relax_cutoff = 15
 set iterm_windup = 85
 set iterm_limit = 400
 set pidsum_limit = 1000
@@ -1097,18 +1081,18 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 85
-set i_pitch = 91
-set d_pitch = 77
-set f_pitch = 170
-set p_roll = 74
-set i_roll = 79
-set d_roll = 64
-set f_roll = 148
-set p_yaw = 74
-set i_yaw = 79
+set p_pitch = 65
+set i_pitch = 58
+set d_pitch = 65
+set f_pitch = 166
+set p_roll = 63
+set i_roll = 56
+set d_roll = 57
+set f_roll = 159
+set p_yaw = 63
+set i_yaw = 56
 set d_yaw = 0
-set f_yaw = 148
+set f_yaw = 159
 set angle_level_strength = 100
 set horizon_level_strength = 50
 set horizon_transition = 75
@@ -1121,11 +1105,11 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 61
-set d_min_pitch = 73
+set d_min_roll = 54
+set d_min_pitch = 61
 set d_min_yaw = 0
 set d_max_gain = 37
-set d_max_advance = 0
+set d_max_advance = 20
 set motor_output_limit = 100
 set auto_profile_cell_count = 0
 set launch_control_mode = NORMAL
@@ -1133,11 +1117,11 @@ set launch_trigger_allow_reset = ON
 set launch_trigger_throttle_percent = 20
 set launch_angle_limit = 0
 set launch_control_gain = 40
-set thrust_linear = 10
+set thrust_linear = 0
 set transient_throttle_limit = 0
 set feedforward_transition = 0
 set feedforward_averaging = OFF
-set feedforward_smooth_factor = 20
+set feedforward_smooth_factor = 0
 set feedforward_jitter_factor = 15
 set feedforward_boost = 5
 set feedforward_max_rate_limit = 90
@@ -1148,31 +1132,31 @@ set dyn_idle_d_gain = 50
 set dyn_idle_max_increase = 150
 set level_race_mode = OFF
 set simplified_pids_mode = RPY
-set simplified_master_multiplier = 165
-set simplified_i_gain = 60
-set simplified_d_gain = 125
+set simplified_master_multiplier = 140
+set simplified_i_gain = 50
+set simplified_d_gain = 130
 set simplified_pi_gain = 100
 set simplified_dmax_gain = 15
-set simplified_feedforward_gain = 75
-set simplified_pitch_d_gain = 105
-set simplified_pitch_pi_gain = 110
+set simplified_feedforward_gain = 95
+set simplified_pitch_d_gain = 100
+set simplified_pitch_pi_gain = 100
 set simplified_dterm_filter = ON
-set simplified_dterm_filter_multiplier = 110
+set simplified_dterm_filter_multiplier = 70
 
 rateprofile 0
 
 # rateprofile 0
 set rateprofile_name = -
-set thr_mid = 40
-set thr_expo = 40
+set thr_mid = 50
+set thr_expo = 0
 set rates_type = ACTUAL
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 12
-set pitch_rc_rate = 12
-set yaw_rc_rate = 12
-set roll_expo = 20
-set pitch_expo = 20
-set yaw_expo = 20
+set roll_rc_rate = 10
+set pitch_rc_rate = 10
+set yaw_rc_rate = 10
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 30
 set roll_srate = 67
 set pitch_srate = 67
 set yaw_srate = 67
