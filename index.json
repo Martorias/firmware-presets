@@ -2659,6 +2659,24 @@
       "priority": 0
     },
     {
+      "fullPath": "presets/4.3/tune/iFlight universal 5inch.txt",
+      "hash": "bcf2ad47244ca1fd9ec6c0fb9d08b5d7950c08e5f27e782e014d29c58af646dc",
+      "title": "iFlight universal 5inch tune RC1 (Cidora, Nazgul5)",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "TUNE",
+      "status": "EXPERIMENTAL",
+      "keywords": [
+        "xing",
+        "iflight",
+        "nazgul",
+        "f5"
+      ],
+      "author": "Patrick XING (iFlight)",
+      "priority": 1000000000000
+    },
+    {
       "fullPath": "presets/4.3/tune/reset_all.txt",
       "hash": "db400b440af2f5cc25d0980fcc25cc5712f71f5ba843fcbf8020d464f6fedcb2",
       "title": "Reset 4.3 Tune parameters, complete listing",
