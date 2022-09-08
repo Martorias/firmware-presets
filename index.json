@@ -302,6 +302,7 @@
       "OVX300",
       "OVX303",
       "P35",
+      "P60",
       "partial",
       "Passthrough",
       "pid",
@@ -309,6 +310,7 @@
       "profile",
       "protek",
       "protek35",
+      "ProTek60 Pro",
       "Pure Race",
       "quaddiction",
       "quick",
@@ -360,6 +362,7 @@
       "SWPR",
       "tank solo",
       "tank ultimate",
+      "Taurus X8 V3",
       "TBS",
       "tbs sa",
       "Team Black Sheep",
@@ -388,6 +391,7 @@
       "vtxtable",
       "whoop",
       "whoop lite",
+      "X8",
       "xing",
       "youtube"
     ]
@@ -774,7 +778,7 @@
     },
     {
       "fullPath": "presets/4.3/bnf/ProTek35 Beast F7 V1 Preset 2022.9.1.txt",
-      "hash": "b370eb52f28d8250642236b124564d4be002054945c4fff56e7d1e463422ac34",
+      "hash": "647bca88eb78e5b2854acaf599acfce10f593ec35467a05fd09d252574dfae66",
       "title": "ProTek35 AIO-V1.x tune RC1",
       "firmware_version": [
         "4.3"
@@ -804,6 +808,42 @@
         "iflight",
         "ProTek35",
         "P35"
+      ],
+      "author": "Patrick XING (iFlight)",
+      "priority": 0
+    },
+    {
+      "fullPath": "presets/4.3/bnf/ProTek60 4.3 Preset 2022.9.7.txt",
+      "hash": "23f178496d6355d638253b936ec46840487b871c9c655765a44f0ebab45dfbf6",
+      "title": "ProTek60 Pro tune RC1",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "BNF",
+      "status": "EXPERIMENTAL",
+      "keywords": [
+        "xing",
+        "iflight",
+        "ProTek60 Pro",
+        "P60"
+      ],
+      "author": "Patrick XING (iFlight)",
+      "priority": 0
+    },
+    {
+      "fullPath": "presets/4.3/bnf/Taurus X8 V3 4.3 Preset 2022.9.6.txt",
+      "hash": "f90b19c8c4e865e33a2be974344a5fcf5d9b0e8f9867b4698d8639c3b6529aba",
+      "title": "Taurus X8 V3 tune RC1",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "BNF",
+      "status": "EXPERIMENTAL",
+      "keywords": [
+        "xing",
+        "iflight",
+        "Taurus X8 V3",
+        "X8"
       ],
       "author": "Patrick XING (iFlight)",
       "priority": 0
